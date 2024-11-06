@@ -1,0 +1,134 @@
+[
+    {
+        "task": "Diagnosing Symptoms",
+        "description": "Assisting in diagnosing patient symptoms based on medical history and presenting issues."
+    },
+    {
+        "task": "Medical Imaging Analysis",
+        "description": "Analyzing X-rays, MRIs, and CT scans for signs of disease or injury."
+    },
+    {
+        "task": "Predictive Analytics",
+        "description": "Forecasting patient outcomes or complications based on medical data."
+    },
+    {
+        "task": "Drug Interaction Checks",
+        "description": "Identifying potential drug interactions in prescribed medications."
+    },
+    {
+        "task": "Treatment Recommendations",
+        "description": "Suggesting evidence-based treatment options for various conditions."
+    },
+    {
+        "task": "Administrative Support",
+        "description": "Scheduling appointments, managing patient records, and handling paperwork."
+    },
+    {
+        "task": "Medication Management",
+        "description": "Assisting with dosage calculations, prescription refills, and tracking patient adherence."
+    },
+    {
+        "task": "Health Monitoring",
+        "description": "Analyzing data from wearable devices for heart rate, glucose levels, or other vital signs."
+    },
+    {
+        "task": "Patient Education",
+        "description": "Providing information on diagnoses, treatments, and preventative care."
+    },
+    {
+        "task": "Telemedicine Support",
+        "description": "Assisting in remote patient consultations and follow-ups."
+    },
+    {
+        "task": "Clinical Documentation",
+        "description": "Transcribing notes, filling out medical forms, and updating electronic health records."
+    },
+    {
+        "task": "Lab Test Interpretation",
+        "description": "Interpreting lab results and explaining them to both healthcare providers and patients."
+    },
+    {
+        "task": "Symptom Screening",
+        "description": "Conducting preliminary symptom screening based on patient inputs."
+    },
+    {
+        "task": "Chronic Disease Management",
+        "description": "Supporting routine monitoring and management of chronic conditions like diabetes or hypertension."
+    },
+    {
+        "task": "Mental Health Support",
+        "description": "Offering mental health screening and initial assessments."
+    },
+    {
+        "task": "Surgical Assistance",
+        "description": "Assisting with surgical planning by analyzing imaging and recommending approaches."
+    },
+    {
+        "task": "Emergency Triage",
+        "description": "Prioritizing emergency cases based on severity and symptoms."
+    },
+    {
+        "task": "Health Risk Assessment",
+        "description": "Identifying patients at high risk for specific health issues based on their history and lifestyle."
+    },
+    {
+        "task": "Training and Education",
+        "description": "Providing continuous education and training on new procedures and medical guidelines."
+    },
+    {
+        "task": "Clinical Research Support",
+        "description": "Assisting with data collection, analysis, and patient recruitment for research studies."
+    },
+    {
+        "task": "Genetic Counseling",
+        "description": "Interpreting genetic test results and explaining them to patients."
+    },
+    {
+        "task": "Inventory Management",
+        "description": "Tracking and ordering medical supplies and medications."
+    },
+    {
+        "task": "Infection Control",
+        "description": "Monitoring and suggesting measures to prevent infections in clinical settings."
+    },
+    {
+        "task": "Medical Coding and Billing",
+        "description": "Assisting with accurate coding for insurance claims."
+    },
+    {
+        "task": "Nutrition and Diet Planning",
+        "description": "Providing dietary recommendations and meal plans for patients."
+    },
+    {
+        "task": "Symptom Prediction for High-Risk Patients",
+        "description": "Monitoring high-risk patients and alerting to early signs of symptoms."
+    },
+    {
+        "task": "Follow-Up Reminders",
+        "description": "Scheduling patient follow-ups and reminding them of important post-treatment care."
+    },
+    {
+        "task": "Monitoring Patient Compliance",
+        "description": "Tracking adherence to prescribed therapies or medications."
+    },
+    {
+        "task": "Language Translation",
+        "description": "Providing real-time translation for patients with limited English proficiency."
+    },
+    {
+        "task": "Health Policy Guidance",
+        "description": "Assisting with compliance to regulations and policies in healthcare."
+    },
+    {
+        "task": "Public Health Surveillance",
+        "description": "Monitoring health trends to identify potential outbreaks and inform response efforts."
+    },
+    {
+        "task": "Pain Management Recommendations",
+        "description": "Suggesting non-opioid pain management alternatives when appropriate."
+    },
+    {
+        "task": "End-of-Life Care Support",
+        "description": "Helping guide care for terminally ill patients and their families."
+    }
+]
