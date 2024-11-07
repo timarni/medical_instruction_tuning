@@ -32,8 +32,6 @@ cluster_labels = clusterer.fit_predict(reduced_embeddings)
 # Print the clusters and their associated sentences
 num_clusters = len(set(cluster_labels)) - (1 if -1 in cluster_labels else 0)  # Exclude noise label (-1)
 print(f"Number of clusters found: {num_clusters}")
-
-print("I found that the users often ask about the same thing, I don't know what to do with this information, maybe we only use one question per cluster ? We'll see, but first interesting thing to note")
 # Print sentences grouped by clusters
 for cluster in range(num_clusters):
     # Find indices of elements belonging to the current cluster
