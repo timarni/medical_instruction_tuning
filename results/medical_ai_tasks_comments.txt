@@ -1,0 +1,27 @@
+Useful tasks, that were removed due to complexity of generate a prompt (e.g. needs an image or a lab result)
+
+     {
+    "task": "Medical Imaging Analysis",
+    "description": "Analyzing X-rays, MRIs, and CT scans for signs of disease or injury.",
+    
+},
+{
+    "task": "Clinical Research Support",
+    "description": "Assisting with data collection, analysis, and interpretation for research studies."
+},
+{
+    "task": "Genetic Counseling",
+    "description": "Interpreting genetic test results and explaining them to patients."
+},
+{
+    "task": "Health Policy Guidance",
+    "description": "Assisting with compliance to regulations and policies in healthcare."
+},
+{
+    "task": "Administrative Support",
+    "description": "Scheduling appointments, managing patient records, and handling paperwork."
+},
+{
+    "task": "Emergency Triage",
+    "description": "Prioritizing emergency cases based on severity and symptoms."
+},
