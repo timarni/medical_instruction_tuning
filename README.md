@@ -10,8 +10,8 @@ scripts:
 * `parse_gpt_response.ipynb` -> parse results from openai batch mode
 
 results:
-* The final result is stored in `parsed_health_care_worker_prompts.json`
-* Useful lists of topics are: `medical_professions.json`, `medical_topics.json`, `medical_subtopics.json`, `medical_settings.json` (not used yet), `medical_ai_tasks.json` (not used yet)
+* The final results are stored in `parsed_prompts_specialty_x_domain.json` and `parsed_prompts_tasks_x_subtopics.json`
+* Useful lists of topics are: `medical_professions.json`, `medical_topics.json`, `medical_subtopics.json`, `medical_ai_tasks.json` (not used yet), `medical_settings.json` (not used yet)
 
 [InternetShortcut]
 URL=https://www.ibm.com/topics/instruction-tuning
