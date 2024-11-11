@@ -1,3 +1,6 @@
+# Script to convert prompts into embeddings and cluster them
+# Script from Bastien
+
 import os
 import json
 from sentence_transformers import SentenceTransformer
@@ -5,23 +8,36 @@ import umap
 import hdbscan
 import numpy as np
 data = []
-with open('results/gpt_results.jsonl', 'r') as f:
-    for line in f:
+
+name_of_prompts = "task_x_subtopics"
+path_to_prompts = "../results/parsed_prompts_" + name_of_prompts + ".json"
+path_to_embeddings = "embeddings_pp_" + name_of_prompts + ".npy"
+
+# Control test mode
+test_mode = True  # Set to False to load all data
+
+# Load prompts
+with open(path_to_prompts, 'r') as f:
+    for i, line in enumerate(f):
+        if test_mode and i >= 5:  # Only load first 5 entries in test mode
+            break
         data.append(json.loads(line))
+
 questions = []
 for d in data:
-    questions.append(d['response']['body']['choices'][0]['message']['content'])
+    questions.append(d['prompt'])
 
 
-if os.path.exists('embeddings.npy'):
-    with open('embeddings.npy', 'rb') as f:
+if os.path.exists(path_to_embeddings):
+    with open(path_to_embeddings, 'rb') as f:
         embeddings = np.load(f)
 else:
     embedder = SentenceTransformer('all-MiniLM-L6-v2')
     embeddings = embedder.encode(questions, show_progress_bar=True)
 
-    with open('embeddings.npy', 'wb') as f:
+    with open(path_to_embeddings, 'wb') as f:
         np.save(f, embeddings)
+
 # Reduce dimensionality to 5 or 10 dimensions
 umap_reducer = umap.UMAP(n_components=5, random_state=42)
 reduced_embeddings = umap_reducer.fit_transform(embeddings)
