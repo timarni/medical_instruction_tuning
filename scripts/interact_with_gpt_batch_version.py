@@ -3,7 +3,7 @@ from tqdm import tqdm
 from openai import OpenAI
 
 def process_batch_by_gpt(
-    path_to_api_key: str = "###Remove, WILL COST MONEY###../API_KEY.txt",
+    path_to_api_key: str = "../API_KEY.txt", ###Remove, WILL COST MONEY###
     path_to_batched_prompts: str = "../results/batched_prompts.jsonl",
     output_path_batch_id: str = "../results/batch_id.txt",
     output_path_batch_object: str = "../results/batch.txt"
@@ -38,7 +38,7 @@ def process_batch_by_gpt(
         endpoint="/v1/chat/completions",
         completion_window="24h",
         metadata={
-        "description": "generate prompts of health care workers"
+        "description": "generate multiturn interactions for medical instruction tuning"
         }
     )
     print("Batch successfully launched")

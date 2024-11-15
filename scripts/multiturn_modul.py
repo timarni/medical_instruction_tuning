@@ -34,6 +34,9 @@ class MultiturnStyle:
         self.number_of_turns_done = 0
 
     # methods
+    def get_all_system_prompts_atributes(self):
+        return [self.mode, self.chatbot_length, self.chatbot_style, self.chatbot_scientific,
+                self.user_length, self.user_scientific, self.user_specialty]
 
     # adds sytle specification to the system prompt of meditron
     def system_prompt_chatbot(self) -> str:
@@ -79,7 +82,11 @@ class MultiturnStyle:
                 prompt_parts.append("Provide your answers using a lot of very specific scientific terms. \n")
             case _:
                 raise ValueError(f"Invalid chatbot_scientific: '{self.chatbot_scientific}'")
-
+        
+        if self.mode in ["chat", "emergency"]:
+            prompt_parts.append("In the prompt you see the whole chat history. You are (chatbot). Your task is to answer the questions and only ask follow up questions, if the user did not provide enough information in its input. \n")
+            prompt_parts.append("Your (chatbot) tag is added manually, don't write it in your output. Just generate an answer to the users input")
+        
         return ''.join(prompt_parts)
     
     def system_prompt_user(self) -> str:
@@ -116,7 +123,11 @@ class MultiturnStyle:
                 prompt_parts.append("Ask follow up questions using a lot of very specific scientific terms. \n")
             case _:
                 raise ValueError(f"Invalid user_scientific: '{self.user_scientific}'")
-                                        
+
+        if self.mode in ["chat", "emergency"]:
+            prompt_parts.append("In the prompt you see the whole chat history. You are (user). You want to get an answer to the first question you asked. Your task is to ask followup questions and to interact with the chatbot to get a clear answer to your initial, as a health care worker would do. \n")
+            prompt_parts.append("Your (user) tag is added manually, don't write it in your output. Just generate a question or an instruction for the chatbot, based on the conversation history")
+
         return ''.join(prompt_parts)
     
 
@@ -167,7 +178,7 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
         case s if s in ["chat", "emergency"]:
             nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.2, 0.3, 0.5])
         case "normal":
-            nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.4, 0.3, 0.3])
+            nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.5, 0.3, 0.2])
 
     # Length of chatbots answer -> possibilities: short, long, exactly_2_sentences, exactly_4_sentences
     chatbot_length_choices = ["short", "long", "exactly_2_sentences", "exactly_4_sentences"]
@@ -196,6 +207,4 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
     else:
         return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
                             cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
-                            u_length=u_length, u_scientific=u_scientific, u_specialty= profession + "specialized in " + specialty)
-
-
+                            u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
