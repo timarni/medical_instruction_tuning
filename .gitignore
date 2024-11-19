@@ -3,3 +3,6 @@ API_KEY.txt
 
 # Ignore folder with relevant papers
 Papers/
+
+# Ignore security copies
+security_copies/
