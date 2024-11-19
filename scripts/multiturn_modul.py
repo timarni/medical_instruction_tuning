@@ -17,12 +17,12 @@ class MultiturnStyle:
         self.mode = mode # Three different modes: "chat", "normal", "emergency"
 
         # Initizalize attributes that determine system prompt of Meditron
-        self.chatbot_length = cb_length # Length of chatbots answer -> possibilities: short, long, exactly_2_sentences, exactly_4_sentences
-        self.chatbot_style = cb_style # Style of chatbots answer -> possibilities: flat text, bullets, step by step
+        self.chatbot_length = cb_length # Length of chatbots answer -> possibilities: no_specification, short, long, exactly_n_sentences
+        self.chatbot_style = cb_style # Style of chatbots answer -> possibilities: no_specification, markdown, plain text, bullets, step by step
         self.chatbot_scientific = cb_scientific # If chatbot uses a lot of scientific term -> possibilities: popularization, standard, scientific
 
         # Initialize attributes that determine system prompt of user
-        self.user_length = u_length # Length of user questions -> possibilities: short, long, exactly_1_sentence, exactly_3_sentences
+        self.user_length = u_length # Length of user questions -> possibilities: no_specification, short, long, exactly_n_sentences
         self.user_scientific = u_scientific # User uses a lot of very scientific terms -> not used so far
         self.user_specialty = u_specialty
         self.bad_grammar = u_bad_grammar # user has bad grammar / does a lot of spelling mistakes -> not used so far
@@ -41,45 +41,60 @@ class MultiturnStyle:
     # adds sytle specification to the system prompt of meditron
     def system_prompt_chatbot(self) -> str:
         prompt_parts = [self.base_system_prompt_chatbot]
+        general_guidelines = '''- Respectful, polite interaction: You must always engage in a respectful, polite, and courteous manner, maintaining professionalism in all interactions.
+- Honest, evidence-based information: All responses have to be based on the latest medical evidence and guidelines
+- Ethical and safe content: Under no circumstances should you provide fake, harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. If a question is unclear or factually incorrect, you should explain why rather than attempting to answer it inaccurately.
+- Dosage: If asked about dosage medication, provide a ballpark estimate of the dosage but always provide a concise warning that this should be checked in the form of “(dosages should be verified)”.
+- Tailor responses to the geographical context, resource setting, level of care, seasonality/epidemiology, and medical specialty as relevant.'''
+        prompt_parts.append(general_guidelines)
         # Chatbot can be used in chat, normal or emergency mode
         match self.mode:
             case "chat":
-                prompt_parts.append("The user is using you (the medical AI chatbot) in chat mode. Provide short and concise answers that make it possible for the user to chat with you. Ask the user follow up questions about their question if their question is not clear enough. \n")
+                prompt_parts.append("- The user is using you (the medical AI chatbot) in chat mode. Provide short and concise answers to facilitate conversation. Ask follow-up questions if the user input is unclear. \n")
             case "emergency":
-                prompt_parts.append("The user is using you (the medical AI chatbot) during a medical emergency. Provide short, concises and well structured answers. Your answers have to be clear and very easy to understand quickly in a high presure and stres environment \n")
+                prompt_parts.append("- The user is using you (the medical AI chatbot) during a medical emergency. Provide short, concise, and well-structured answers. Your responses must be clear and easy to understand in high-pressure and stressful environments. \n")
             case "normal":
                 # Set epected length of chatbots answer
                 match self.chatbot_length:
+                    case "no_specification":
+                        pass
                     case "short":
-                        prompt_parts.append("Provide short and concises answers. \n")
+                        prompt_parts.append("- Provide short and concises answers. \n")
                     case "long":
-                        prompt_parts.append("Provide long and detailed answers. \n")
-                    case "exactly_2_sentences":
-                        prompt_parts.append("All your answers should be exactly 2 sentences long. \n")
-                    case "exactly_4_sentences":
-                        prompt_parts.append("All your answers should be exactly 4 sentences long. \n")
+                        prompt_parts.append("- Provide long and detailed answers. \n")
+                    case "exactly_n_sentences":
+                        n = random.randint(2, 10)
+                        prompt_parts.append(f"- All your answers should be exactly {n} sentences long. \n")
                     case _:
                         raise ValueError(f"Invalid chatbot_length: '{self.chatbot_length}'")
                 
                 # Set expected style of chatbots answer
                 match self.chatbot_style:
-                    case "flat text":
-                        prompt_parts.append("Provide your answers in flat text. \n")
+                    case "no_specification":
+                        pass
+                    case "markdown":
+                        prompt_parts.append("- Break down the response into clear sections with headings and subheadings in markdown format. Use bulleted or numbered lists to organize information logically and clearly. Provide all output in a nice markdown format.")
+                    case "plain text":
+                        prompt_parts.append("- Provide your answers as plain text. \n")
                     case "bullets":
-                        prompt_parts.append("Provide your answers using bullet points. \n")
+                        prompt_parts.append("- Present your answers using bullet points. \n")
                     case "step by step":
-                        prompt_parts.append("Provide your answers by giving the physician step by step advice on how to solve the question they asked. \n")
+                        prompt_parts.append("- Provide step-by-step advice to help the physician address their question. \n")
                     case _:
                         raise ValueError(f"Invalid chatbot_style: '{self.chatbot_style}'")
+            case _:
+                raise ValueError(f"Invalid chatbot_style: '{self.mode}'")
+
+
             
         # Add if the style of the answers should be very scientific
         match self.chatbot_scientific:
             case "popularization":
-                prompt_parts.append("Provide your answers using easy to understand terms and avoid using scientific terms that are difficult to understand. \n")
+                prompt_parts.append("- Use simple and easy-to-understand language, avoiding overly complex scientific terms. \n")
             case "standard":
-                prompt_parts.append("") # Don't add anything if standard
+                pass # Don't add anything if standard
             case "scientific":
-                prompt_parts.append("Provide your answers using a lot of very specific scientific terms. \n")
+                prompt_parts.append("- Use highly specific and technical scientific terminology in your responses. \n")
             case _:
                 raise ValueError(f"Invalid chatbot_scientific: '{self.chatbot_scientific}'")
         
@@ -95,32 +110,35 @@ class MultiturnStyle:
         # User behavior is characterized by 3 different modes: chat, normal or emergency mode
         match self.mode:
             case "chat":
-                prompt_parts.append(f"You (the {self.user_specialty} using the medical AI chatbot) are using the medical AI chatbot in chat mode. Ask short and concise questions that make it possible for the chatbot to chat with you. Ask follow up questions about the answers from the chatbot if the answers are not clear enough. \n")
+                prompt_parts.append(f"- You (the {self.user_specialty} using the medical AI chatbot) are using the medical AI chatbot in chat mode. Ask short and concise questions to facilitate conversation. Pose follow-up questions if the chatbot answers are unclear. \n")
             case "emergency":
-                prompt_parts.append(f"You (the {self.user_specialty} using the medical AI chatbot) are using the medical AI chatbot during a medical emergency. Ask short and fastly written questions. \n")
+                prompt_parts.append(f"- You (the {self.user_specialty} using the medical AI chatbot) are using the medical AI chatbot during a medical emergency. Ask short and quickly written questions. \n")
             case "normal":
                 # Set epected length of chatbots answer
                 match self.user_length:
+                    case "no_specification":
+                        pass
                     case "short":
-                        prompt_parts.append("Ask short and concises questions. \n")
+                        prompt_parts.append("- Ask short and concises questions. \n")
                     case "long":
-                        prompt_parts.append("Ask long and detailed questions. \n")
-                    case "exactly_1_sentence":
-                        prompt_parts.append("All your questions should be exactly 1 sentence long. \n")
-                    case "exactly_3_sentences":
-                        prompt_parts.append("All your questions should be exactly 3 sentences long. \n")
+                        prompt_parts.append("- Ask long and detailed questions. \n")
+                    case "exactly_n_sentences":
+                        n = random.randint(1, 10)
+                        if n == 1:
+                            prompt_parts.append("- All your questions should be exactly 1 sentence long. \n")
+                        else:
+                            prompt_parts.append(f"- All your questions should be exactly {n} sentences long. \n")
                     case _:
                         raise ValueError(f"Invalid user_length: '{self.user_length}'")
                 
-            
         # Add if the style of the answers should be very scientific
         match self.user_scientific:
             case "popularization":
-                prompt_parts.append("Ask follow up questions using easy to understand terms and avoid using scientific terms that are difficult. \n")
+                prompt_parts.append("- Ask follow-up questions using simple and easy-to-understand terms. Avoid overly complex scientific language. \n")
             case "standard":
-                prompt_parts.append("") # Don't add anything if standard
+                pass
             case "scientific":
-                prompt_parts.append("Ask follow up questions using a lot of very specific scientific terms. \n")
+                prompt_parts.append("- Ask follow-up questions using precise and highly specific scientific terminology. \n")
             case _:
                 raise ValueError(f"Invalid user_scientific: '{self.user_scientific}'")
 
@@ -168,7 +186,7 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
             if specialty == "Emergency Medicine" or domain == "Emergency Medicine":
                 mode = "emergency"
             else:
-                mode = get_sample(choices=mode_choices, weights=[0.4, 0.6, 0])
+                mode = get_sample(choices=mode_choices, weights=[0.35, 0.55, 0.1])
         case _:
             raise ValueError(f"Invalid id: '{id}'")     
     
@@ -181,19 +199,19 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
             nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.5, 0.3, 0.2])
 
     # Length of chatbots answer -> possibilities: short, long, exactly_2_sentences, exactly_4_sentences
-    chatbot_length_choices = ["short", "long", "exactly_2_sentences", "exactly_4_sentences"]
-    cb_length = get_sample(choices=chatbot_length_choices, weights=[0.3, 0.5, 0.1, 0.1])
+    chatbot_length_choices = ["no_specification", "short", "long", "exactly_n_sentences"]
+    cb_length = get_sample(choices=chatbot_length_choices, weights=[0.4, 0.2, 0.3, 0.1])
 
     # Style of chatbot's answer -> possibilities: chat, flat text, bullets, step by step
-    chatbot_style_choices = ["flat text", "bullets", "step by step"]
-    cb_style = get_sample(choices=chatbot_style_choices, weights=[0.5, 0.25, 0.25])
+    chatbot_style_choices = ["no_specification", "markdown", "plain text", "bullets", "step by step"]
+    cb_style = get_sample(choices=chatbot_style_choices, weights=[0.4, 0.15, 0.15, 0.15, 0.15])
 
     # If chatbot uses a lot of scientific term -> possibilities: popularization, standard, scientific
     chatbot_scientific_choices = ["popularization", "standard", "scientific"]
     cb_scientific = get_sample(choices=chatbot_scientific_choices, weights=[0.1, 0.8, 0.1])
 
     # Length of user questions -> possibilities: chat, short, long, exactly_1_sentence, exactly_3_sentences
-    user_length_choices = ["short", "long", "exactly_1_sentence", "exactly_3_sentences"]
+    user_length_choices = ["no_specification", "short", "long", "exactly_n_sentences"]
     u_length = get_sample(choices=user_length_choices, weights=[0.4, 0.3, 0.2, 0.1])
 
     # If the user uses a lot of scientific term -> possibilities: popularization, standard, scientific
