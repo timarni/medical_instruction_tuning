@@ -1,0 +1,236 @@
+[
+    {
+      "profession": "Physician",
+      "specialties": [
+        "Allergy and Immunology",
+        "Anesthesiology",
+        "Cardiology",
+        "Dermatology",
+        "Emergency Medicine",
+        "Endocrinology",
+        "Family Medicine",
+        "Gastroenterology",
+        "Geriatrics",
+        "Hematology",
+        "Infectious Disease",
+        "Internal Medicine",
+        "Nephrology",
+        "Neurology",
+        "Obstetrics and Gynecology",
+        "Oncology",
+        "Ophthalmology",
+        "Orthopedic Surgery",
+        "Otolaryngology (ENT)",
+        "Pathology",
+        "Pediatrics",
+        "Physical Medicine and Rehabilitation",
+        "Psychiatry",
+        "Pulmonology",
+        "Radiology",
+        "Rheumatology",
+        "Surgery",
+        "Urology"
+      ]
+    },
+    {
+      "profession": "Nurse",
+      "specialties": [
+        "Critical Care Nursing",
+        "Emergency Nursing",
+        "Geriatric Nursing",
+        "Medical-Surgical Nursing",
+        "Neonatal Nursing",
+        "Oncology Nursing",
+        "Pediatric Nursing",
+        "Psychiatric Nursing",
+        "Public Health Nursing"
+      ]
+    },
+    {
+      "profession": "Physician Assistant",
+      "specialties": [
+        "Family Medicine",
+        "Emergency Medicine",
+        "Surgery",
+        "Dermatology",
+        "Orthopedics",
+        "Psychiatry"
+      ]
+    },
+    {
+      "profession": "Pharmacist",
+      "specialties": [
+        "Clinical Pharmacy",
+        "Community Pharmacy",
+        "Consultant Pharmacy",
+        "Hospital Pharmacy",
+        "Industrial Pharmacy",
+        "Nuclear Pharmacy",
+        "Oncology Pharmacy"
+      ]
+    },
+    {
+      "profession": "Physical Therapist",
+      "specialties": [
+        "Cardiovascular and Pulmonary",
+        "Geriatric",
+        "Neurological",
+        "Orthopedic",
+        "Pediatric",
+        "Sports",
+        "Women's Health"
+      ]
+    },
+    {
+      "profession": "Occupational Therapist",
+      "specialties": [
+        "Geriatric Occupational Therapy",
+        "Mental Health Occupational Therapy",
+        "Pediatric Occupational Therapy",
+        "Physical Rehabilitation",
+        "Hand Therapy"
+      ]
+    },
+    {
+      "profession": "Speech-Language Pathologist",
+      "specialties": [
+        "Fluency Disorders",
+        "Neurogenic Communication Disorders",
+        "Speech Sound Disorders",
+        "Voice Disorders",
+        "Swallowing Disorders"
+      ]
+    },
+    {
+      "profession": "Radiologic Technologist",
+      "specialties": [
+        "Diagnostic Radiology",
+        "Computed Tomography (CT)",
+        "Magnetic Resonance Imaging (MRI)",
+        "Nuclear Medicine",
+        "Ultrasound",
+        "Mammography"
+      ]
+    },
+    {
+      "profession": "Medical Laboratory Scientist",
+      "specialties": [
+        "Clinical Chemistry",
+        "Hematology",
+        "Immunology",
+        "Microbiology",
+        "Molecular Diagnostics",
+        "Transfusion Medicine"
+      ]
+    },
+    {
+      "profession": "Dietitian",
+      "specialties": [
+        "Clinical Dietetics",
+        "Community Dietetics",
+        "Foodservice Management",
+        "Gerontological Nutrition",
+        "Pediatric Nutrition",
+        "Sports Nutrition"
+      ]
+    },
+    {
+      "profession": "Respiratory Therapist",
+      "specialties": [
+        "Adult Critical Care",
+        "Neonatal and Pediatric Care",
+        "Pulmonary Rehabilitation",
+        "Sleep Disorders"
+      ]
+    },
+    {
+      "profession": "Paramedic",
+      "specialties": [
+        "Emergency Medical Services",
+        "Critical Care Transport",
+        "Tactical EMS",
+        "Community Paramedicine"
+      ]
+    },
+    {
+      "profession": "Chiropractor",
+      "specialties": [
+        "Sports Chiropractic",
+        "Pediatric Chiropractic",
+        "Geriatric Chiropractic",
+        "Rehabilitation"
+      ]
+    },
+    {
+      "profession": "Podiatrist",
+      "specialties": [
+        "Podiatric Surgery",
+        "Sports Medicine",
+        "Diabetic Foot Care",
+        "Pediatric Podiatry"
+      ]
+    },
+    {
+      "profession": "Optometrist",
+      "specialties": [
+        "Pediatric Optometry",
+        "Geriatric Optometry",
+        "Vision Therapy",
+        "Contact Lens Specialist"
+      ]
+    },
+    {
+      "profession": "Audiologist",
+      "specialties": [
+        "Pediatric Audiology",
+        "Cochlear Implants",
+        "Balance Disorders",
+        "Hearing Aid Dispensing"
+      ]
+    },
+    {
+      "profession": "Occupational Health and Safety Specialist",
+      "specialties": [
+        "Industrial Hygiene",
+        "Ergonomics",
+        "Risk Management"
+      ]
+    },
+    {
+      "profession": "Medical Social Worker",
+      "specialties": [
+        "Clinical Social Work",
+        "Healthcare Administration",
+        "Mental Health Counseling",
+        "Palliative Care"
+      ]
+    },
+    {
+      "profession": "Genetic Counselor",
+      "specialties": [
+        "Prenatal Genetics",
+        "Cancer Genetics",
+        "Pediatric Genetics",
+        "Cardiovascular Genetics"
+      ]
+    },
+    {
+      "profession": "Orthotist and Prosthetist",
+      "specialties": [
+        "Lower Limb Prosthetics",
+        "Upper Limb Prosthetics",
+        "Spinal Orthotics",
+        "Pediatric Prosthetics and Orthotics"
+      ]
+    },
+    {
+      "profession": "Clinical Psychologist",
+      "specialties": [
+        "Child and Adolescent Psychology",
+        "Neuropsychology",
+        "Health Psychology",
+        "Forensic Psychology",
+        "Rehabilitation Psychology"
+      ]
+    }
+  ]

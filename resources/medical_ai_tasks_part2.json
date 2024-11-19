@@ -1,0 +1,14 @@
+[
+    {
+        "task": "Emergency Triage",
+        "description": "Prioritizing emergency cases based on severity and symptoms.",
+        "max_token": 1000,
+        "additional_instruction": "Generate realistic emergency scenarios and base prioritization on severity."
+    },
+    {
+        "task": "Health Policy Guidance",
+        "description": "Assisting with compliance to regulations and policies in healthcare.",
+        "max_token": 300,
+        "additional_instruction": "Provide a brief example of a healthcare regulation scenario, focusing on policy compliance."
+    }
+]
