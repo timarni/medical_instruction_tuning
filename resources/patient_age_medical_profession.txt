@@ -1,0 +1,242 @@
+Here is a detailed mapping of possible **age categories** for each specialty within the provided professions:
+
+---
+
+### **Physician**
+
+1. **Allergy and Immunology**: All age categories  
+2. **Anesthesiology**: All age categories  
+3. **Cardiology**: Adolescents, Adults, Middle-aged Adults, Older Adults, Elderly  
+4. **Dermatology**: All age categories  
+5. **Emergency Medicine**: All age categories  
+6. **Endocrinology**: Adolescents, Adults, Middle-aged Adults, Older Adults, Elderly  
+7. **Family Medicine**: All age categories  
+8. **Gastroenterology**: Adolescents, Adults, Middle-aged Adults, Older Adults, Elderly  
+9. **Geriatrics**: Older Adults, Elderly, Centenarians  
+10. **Hematology**: All age categories  
+11. **Infectious Disease**: All age categories  
+12. **Internal Medicine**: Adolescents, Adults, Middle-aged Adults, Older Adults  
+13. **Nephrology**: Adolescents, Adults, Middle-aged Adults, Older Adults, Elderly  
+14. **Neurology**: All age categories  
+15. **Obstetrics and Gynecology**: Adolescents, Adults, Middle-aged Adults  
+16. **Oncology**: All age categories  
+17. **Ophthalmology**: All age categories  
+18. **Orthopedic Surgery**: All age categories  
+19. **Otolaryngology (ENT)**: All age categories  
+20. **Pathology**: All age categories  
+21. **Pediatrics**: Infants, Toddlers, Preschoolers, School-age Children, Adolescents  
+22. **Physical Medicine and Rehabilitation**: All age categories  
+23. **Psychiatry**: All age categories  
+24. **Pulmonology**: All age categories  
+25. **Radiology**: All age categories  
+26. **Rheumatology**: Adolescents, Adults, Middle-aged Adults, Older Adults  
+27. **Surgery**: All age categories  
+28. **Urology**: All age categories  
+
+---
+
+### **Nurse**
+
+1. **Critical Care Nursing**: All age categories  
+2. **Emergency Nursing**: All age categories  
+3. **Geriatric Nursing**: Older Adults, Elderly, Centenarians  
+4. **Medical-Surgical Nursing**: All age categories  
+5. **Neonatal Nursing**: Infants  
+6. **Oncology Nursing**: All age categories  
+7. **Pediatric Nursing**: Infants, Toddlers, Preschoolers, School-age Children, Adolescents  
+8. **Psychiatric Nursing**: All age categories  
+9. **Public Health Nursing**: All age categories  
+
+---
+
+### **Physician Assistant**
+
+1. **Family Medicine**: All age categories  
+2. **Emergency Medicine**: All age categories  
+3. **Surgery**: All age categories  
+4. **Dermatology**: All age categories  
+5. **Orthopedics**: All age categories  
+6. **Psychiatry**: All age categories  
+
+---
+
+### **Pharmacist**
+
+1. **Clinical Pharmacy**: All age categories  
+2. **Community Pharmacy**: All age categories  
+3. **Consultant Pharmacy**: Older Adults, Elderly  
+4. **Hospital Pharmacy**: All age categories  
+5. **Industrial Pharmacy**: Adults, Middle-aged Adults  
+6. **Nuclear Pharmacy**: Adults, Middle-aged Adults  
+7. **Oncology Pharmacy**: All age categories  
+
+---
+
+### **Physical Therapist**
+
+1. **Cardiovascular and Pulmonary**: Adolescents, Adults, Older Adults  
+2. **Geriatric**: Older Adults, Elderly, Centenarians  
+3. **Neurological**: All age categories  
+4. **Orthopedic**: All age categories  
+5. **Pediatric**: Infants, Toddlers, Preschoolers, School-age Children, Adolescents  
+6. **Sports**: Adolescents, Adults  
+7. **Women's Health**: Adolescents, Adults  
+
+---
+
+### **Occupational Therapist**
+
+1. **Geriatric Occupational Therapy**: Older Adults, Elderly  
+2. **Mental Health Occupational Therapy**: All age categories  
+3. **Pediatric Occupational Therapy**: Infants, Toddlers, Preschoolers, School-age Children, Adolescents  
+4. **Physical Rehabilitation**: All age categories  
+5. **Hand Therapy**: Adolescents, Adults, Older Adults  
+
+---
+
+### **Speech-Language Pathologist**
+
+1. **Fluency Disorders**: Preschoolers, School-age Children, Adolescents  
+2. **Neurogenic Communication Disorders**: Adults, Older Adults  
+3. **Speech Sound Disorders**: Preschoolers, School-age Children  
+4. **Voice Disorders**: Adolescents, Adults  
+5. **Swallowing Disorders**: Infants, Older Adults  
+
+---
+
+### **Radiologic Technologist**
+
+1. **Diagnostic Radiology**: All age categories  
+2. **Computed Tomography (CT)**: All age categories  
+3. **Magnetic Resonance Imaging (MRI)**: All age categories  
+4. **Nuclear Medicine**: Adolescents, Adults, Older Adults  
+5. **Ultrasound**: All age categories  
+6. **Mammography**: Adults, Older Adults  
+
+---
+
+### **Medical Laboratory Scientist**
+
+1. **Clinical Chemistry**: All age categories  
+2. **Hematology**: All age categories  
+3. **Immunology**: All age categories  
+4. **Microbiology**: All age categories  
+5. **Molecular Diagnostics**: All age categories  
+6. **Transfusion Medicine**: All age categories  
+
+---
+
+### **Dietitian**
+
+1. **Clinical Dietetics**: All age categories  
+2. **Community Dietetics**: All age categories  
+3. **Foodservice Management**: Adults, Older Adults  
+4. **Gerontological Nutrition**: Older Adults, Elderly  
+5. **Pediatric Nutrition**: Infants, Toddlers, School-age Children  
+6. **Sports Nutrition**: Adolescents, Adults  
+
+---
+
+### **Respiratory Therapist**
+
+1. **Adult Critical Care**: Adults, Older Adults  
+2. **Neonatal and Pediatric Care**: Infants, Toddlers, School-age Children  
+3. **Pulmonary Rehabilitation**: Adults, Older Adults  
+4. **Sleep Disorders**: All age categories  
+
+---
+
+### **Paramedic**
+
+1. **Emergency Medical Services**: All age categories  
+2. **Critical Care Transport**: All age categories  
+3. **Tactical EMS**: Adolescents, Adults  
+4. **Community Paramedicine**: Adults, Older Adults  
+
+---
+
+### **Chiropractor**
+
+1. **Sports Chiropractic**: Adolescents, Adults  
+2. **Pediatric Chiropractic**: Infants, Toddlers, School-age Children  
+3. **Geriatric Chiropractic**: Older Adults, Elderly  
+4. **Rehabilitation**: All age categories  
+
+---
+
+### **Podiatrist**
+
+1. **Podiatric Surgery**: Adults, Older Adults  
+2. **Sports Medicine**: Adolescents, Adults  
+3. **Diabetic Foot Care**: Adults, Older Adults  
+4. **Pediatric Podiatry**: Infants, School-age Children  
+
+---
+
+### **Optometrist**
+
+1. **Pediatric Optometry**: Infants, Toddlers, School-age Children  
+2. **Geriatric Optometry**: Older Adults, Elderly  
+3. **Vision Therapy**: All age categories  
+4. **Contact Lens Specialist**: Adolescents, Adults  
+
+---
+
+### **Audiologist**
+
+1. **Pediatric Audiology**: Infants, Toddlers, School-age Children  
+2. **Cochlear Implants**: All age categories  
+3. **Balance Disorders**: Adults, Older Adults  
+4. **Hearing Aid Dispensing**: Older Adults, Elderly  
+
+---
+Here is the list for the last five categories:
+
+---
+
+### **Occupational Health and Safety Specialist**
+
+1. **Industrial Hygiene**: Adolescents (in vocational training), Adults, Middle-aged Adults  
+2. **Ergonomics**: Adults, Middle-aged Adults, Older Adults  
+3. **Risk Management**: Adults, Middle-aged Adults  
+
+---
+
+### **Medical Social Worker**
+
+1. **Clinical Social Work**: All age categories  
+2. **Healthcare Administration**: Adolescents, Adults, Middle-aged Adults, Older Adults  
+3. **Mental Health Counseling**: All age categories  
+4. **Palliative Care**: Older Adults, Elderly, Centenarians  
+
+---
+
+### **Genetic Counselor**
+
+1. **Prenatal Genetics**: Adolescents, Adults (childbearing age)  
+2. **Cancer Genetics**: Adolescents, Adults, Middle-aged Adults, Older Adults  
+3. **Pediatric Genetics**: Infants, Toddlers, School-age Children, Adolescents  
+4. **Cardiovascular Genetics**: Adolescents, Adults, Middle-aged Adults  
+
+---
+
+### **Orthotist and Prosthetist**
+
+1. **Lower Limb Prosthetics**: Adolescents, Adults, Older Adults  
+2. **Upper Limb Prosthetics**: Adolescents, Adults, Older Adults  
+3. **Spinal Orthotics**: Adolescents, Adults, Older Adults  
+4. **Pediatric Prosthetics and Orthotics**: Infants, Toddlers, School-age Children  
+
+---
+
+### **Clinical Psychologist**
+
+1. **Child and Adolescent Psychology**: Infants, Toddlers, Preschoolers, School-age Children, Adolescents  
+2. **Neuropsychology**: All age categories  
+3. **Health Psychology**: Adolescents, Adults, Middle-aged Adults, Older Adults  
+4. **Forensic Psychology**: Adolescents, Adults  
+5. **Rehabilitation Psychology**: All age categories  
+
+---
+
+Let me know if you'd like further refinements or additional combinations!

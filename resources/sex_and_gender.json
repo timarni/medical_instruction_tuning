@@ -1,0 +1,41 @@
+[
+  {
+    "sex": "Male",
+    "gender": [
+      "Cisgender Male",
+      "Transgender Female",
+      "Non-binary / Genderqueer",
+      "Genderfluid",
+      "Agender",
+      "Two-Spirit (specific to Indigenous cultures)",
+      "Other / Undefined (self-identifying terms)"
+    ],
+    "rates": [0.9, 0.05, 0.01, 0.01, 0.01, 0.01, 0.01]
+  },
+  {
+    "sex": "Female",
+    "gender": [
+      "Cisgender Female",
+      "Transgender Male",
+      "Non-binary / Genderqueer",
+      "Genderfluid",
+      "Agender",
+      "Two-Spirit (specific to Indigenous cultures)",
+      "Other / Undefined (self-identifying terms)"
+    ],
+    "rates": [0.9, 0.05, 0.01, 0.01, 0.01, 0.01, 0.01]    
+  },
+  {
+    "sex": "Intersex",
+    "gender": [
+      "Male",
+      "Female",
+      "Non-binary / Genderqueer",
+      "Genderfluid",
+      "Agender",
+      "Two-Spirit (specific to Indigenous cultures)",
+      "Other / Undefined (self-identifying terms)"
+    ],
+    "rates": [0.45, 0.45, 0.02, 0.02, 0.02, 0.02, 0.02]
+  }
+]

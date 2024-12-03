@@ -2,67 +2,79 @@
     {
         "task": "Diagnosing Symptoms",
         "description": "Assisting in diagnosing patient symptoms based on medical history and presenting issues.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate a realistic medical history and presenting issues for a patient, and base your question on the generated case."
     },
     {
         "task": "Predictive Analytics",
         "description": "Forecasting patient outcomes or complications based on medical data.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate realistic medical data for a patient, and base your question on the generated case."
     },
     {
         "task": "Drug Interaction Checks",
         "description": "Identifying potential drug interactions in prescribed medications.",
-        "max_token": 200,
+        "max_token": 1000,
         "additional_instruction": "Generate a brief example describing a case where a doctor has prescribed multiple medications to a patient."
     },
     {
         "task": "Treatment Recommendations",
         "description": "Suggesting evidence-based treatment options for various conditions.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate a realistic medical history and presenting issues for a patient, and base your question on the generated case."
     },
     {
         "task": "Medication Management",
         "description": "Assisting with dosage calculations.",
-        "max_token": 200,
+        "max_token": 1000,
         "additional_instruction": "Generate a brief example describing a case where a doctor has prescribed multiple medications to a patient."
     },
     {
         "task": "Patient Education",
         "description": "Providing information on diagnoses, treatments, and preventative care.",
-        "max_token": 200,
+        "max_token": 1000,
         "additional_instruction": "Provide an example diagnosis that a healthcare worker wants to explain in simple terms to the patient."
     },
     {
         "task": "Clinical Documentation",
         "description": "Transcribing notes of a healthcare worker.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate notes that a healthcare worker would write during an anamnesis. The healthcare worker would then want these notes transcribed for inclusion in an official medical record."
     },
     {
         "task": "Lab Test Interpretation",
         "description": "Interpreting lab results and explaining them to both healthcare providers and patients.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate a realistic lab test result and base your question on that result."
     },
     {
         "task": "Health Risk Assessment",
         "description": "Identifying patients at high risk for specific health issues based on their history and lifestyle.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate a realistic medical history and lifestyle for a patient, and base your question on the generated case."
     },
     {
         "task": "Nutrition and Diet Planning",
         "description": "Providing dietary recommendations and meal plans for patients.",
-        "max_token": 500,
+        "max_token": 1000,
         "additional_instruction": "Generate a realistic medical history and presenting issues for a patient, and base your question on the generated case."
     },
     {
         "task": "Language Translation",
         "description": "Providing real-time translation for patients with limited English proficiency.",
-        "max_token": 200,
+        "max_token": 1000,
         "additional_instruction": "Generate a short medical text in one language, and the prompt should request translation into another language."
+    },
+    {
+        "task": "Emergency Triage",
+        "description": "Prioritizing emergency cases based on severity and symptoms.",
+        "max_token": 1000,
+        "additional_instruction": "Generate realistic emergency scenarios and base prioritization on severity."
+    },
+    {
+        "task": "Health Policy Guidance",
+        "description": "Assisting with compliance to regulations and policies in healthcare.",
+        "max_token": 1000,
+        "additional_instruction": "Provide a brief example of a healthcare regulation scenario, focusing on policy compliance."
     }
 ]

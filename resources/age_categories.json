@@ -1,0 +1,46 @@
+[
+  {
+    "category": "Infants",
+    "range": "0 to 1 year"
+  },
+  {
+    "category": "Toddlers",
+    "range": "1 to 3 years"
+  },
+  {
+    "category": "Preschoolers",
+    "range": "3 to 5 years"
+  },
+  {
+    "category": "School-age Children",
+    "range": "6 to 12 years"
+  },
+  {
+    "category": "Adolescents",
+    "range": "13 to 18 years"
+  },
+  {
+    "category": "Young Adults",
+    "range": "19 to 25 years"
+  },
+  {
+    "category": "Adults",
+    "range": "26 to 40 years"
+  },
+  {
+    "category": "Middle-aged Adults",
+    "range": "41 to 60 years"
+  },
+  {
+    "category": "Older Adults",
+    "range": "61 to 75 years"
+  },
+  {
+    "category": "Elderly",
+    "range": "76 to 90 years"
+  },
+  {
+    "category": "Centenarians",
+    "range": "91+ years"
+  }
+]

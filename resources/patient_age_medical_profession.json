@@ -1,0 +1,1008 @@
+[
+  {
+    "profession": "Physician",
+    "specialties": [
+      [
+        "Allergy and Immunology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Anesthesiology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Cardiology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Dermatology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Emergency Medicine",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Endocrinology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Family Medicine",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Gastroenterology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Geriatrics",
+        [
+          "Older Adults",
+          "Elderly",
+          "Centenarians"
+        ]
+      ],
+      [
+        "Hematology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Infectious Disease",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Internal Medicine",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Nephrology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Neurology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Obstetrics and Gynecology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ],
+      [
+        "Oncology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Ophthalmology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Orthopedic Surgery",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Otolaryngology (ENT)",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pathology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pediatrics",
+        [
+          "Infants",
+          "Toddlers",
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Physical Medicine and Rehabilitation",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Psychiatry",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pulmonology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Radiology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Rheumatology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Surgery",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Urology",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Nurse",
+    "specialties": [
+      [
+        "Critical Care Nursing",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Emergency Nursing",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Geriatric Nursing",
+        [
+          "Older Adults",
+          "Elderly",
+          "Centenarians"
+        ]
+      ],
+      [
+        "Medical-Surgical Nursing",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Neonatal Nursing",
+        [
+          "Infants"
+        ]
+      ],
+      [
+        "Oncology Nursing",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pediatric Nursing",
+        [
+          "Infants",
+          "Toddlers",
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Psychiatric Nursing",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Public Health Nursing",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Physician Assistant",
+    "specialties": [
+      [
+        "Family Medicine",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Emergency Medicine",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Surgery",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Dermatology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Orthopedics",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Psychiatry",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Pharmacist",
+    "specialties": [
+      [
+        "Clinical Pharmacy",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Community Pharmacy",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Consultant Pharmacy",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Hospital Pharmacy",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Industrial Pharmacy",
+        [
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ],
+      [
+        "Nuclear Pharmacy",
+        [
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ],
+      [
+        "Oncology Pharmacy",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Physical Therapist",
+    "specialties": [
+      [
+        "Cardiovascular and Pulmonary",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Geriatric",
+        [
+          "Older Adults",
+          "Elderly",
+          "Centenarians"
+        ]
+      ],
+      [
+        "Neurological",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Orthopedic",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pediatric",
+        [
+          "Infants",
+          "Toddlers",
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Sports",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Women's Health",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Occupational Therapist",
+    "specialties": [
+      [
+        "Geriatric Occupational Therapy",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Mental Health Occupational Therapy",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Pediatric Occupational Therapy",
+        [
+          "Infants",
+          "Toddlers",
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Physical Rehabilitation",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Hand Therapy",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Speech-Language Pathologist",
+    "specialties": [
+      [
+        "Fluency Disorders",
+        [
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Neurogenic Communication Disorders",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Speech Sound Disorders",
+        [
+          "Preschoolers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Voice Disorders",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Swallowing Disorders",
+        [
+          "Infants",
+          "Older Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Radiologic Technologist",
+    "specialties": [
+      [
+        "Diagnostic Radiology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Computed Tomography (CT)",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Magnetic Resonance Imaging (MRI)",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Nuclear Medicine",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Ultrasound",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Mammography",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Medical Laboratory Scientist",
+    "specialties": [
+      [
+        "Clinical Chemistry",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Hematology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Immunology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Microbiology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Molecular Diagnostics",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Transfusion Medicine",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Dietitian",
+    "specialties": [
+      [
+        "Clinical Dietetics",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Community Dietetics",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Foodservice Management",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Gerontological Nutrition",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Pediatric Nutrition",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Sports Nutrition",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Respiratory Therapist",
+    "specialties": [
+      [
+        "Adult Critical Care",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Neonatal and Pediatric Care",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Pulmonary Rehabilitation",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Sleep Disorders",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Paramedic",
+    "specialties": [
+      [
+        "Emergency Medical Services",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Critical Care Transport",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Tactical EMS",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Community Paramedicine",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Chiropractor",
+    "specialties": [
+      [
+        "Sports Chiropractic",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Pediatric Chiropractic",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Geriatric Chiropractic",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Rehabilitation",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Podiatrist",
+    "specialties": [
+      [
+        "Podiatric Surgery",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Sports Medicine",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Diabetic Foot Care",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Pediatric Podiatry",
+        [
+          "Infants",
+          "School-age Children"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Optometrist",
+    "specialties": [
+      [
+        "Pediatric Optometry",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Geriatric Optometry",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ],
+      [
+        "Vision Therapy",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Contact Lens Specialist",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Audiologist",
+    "specialties": [
+      [
+        "Pediatric Audiology",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ],
+      [
+        "Cochlear Implants",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Balance Disorders",
+        [
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Hearing Aid Dispensing",
+        [
+          "Older Adults",
+          "Elderly"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Occupational Health and Safety Specialist",
+    "specialties": [
+      [
+        "Industrial Hygiene",
+        [
+          "Adolescents (in vocational training)",
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ],
+      [
+        "Ergonomics",
+        [
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Risk Management",
+        [
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Medical Social Worker",
+    "specialties": [
+      [
+        "Clinical Social Work",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Healthcare Administration",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Mental Health Counseling",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Palliative Care",
+        [
+          "Older Adults",
+          "Elderly",
+          "Centenarians"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Genetic Counselor",
+    "specialties": [
+      [
+        "Prenatal Genetics",
+        [
+          "Adolescents",
+          "Adults (childbearing age)"
+        ]
+      ],
+      [
+        "Cancer Genetics",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Pediatric Genetics",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Cardiovascular Genetics",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Orthotist and Prosthetist",
+    "specialties": [
+      [
+        "Lower Limb Prosthetics",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Upper Limb Prosthetics",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Spinal Orthotics",
+        [
+          "Adolescents",
+          "Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Pediatric Prosthetics and Orthotics",
+        [
+          "Infants",
+          "Toddlers",
+          "School-age Children"
+        ]
+      ]
+    ]
+  },
+  {
+    "profession": "Clinical Psychologist",
+    "specialties": [
+      [
+        "Child and Adolescent Psychology",
+        [
+          "Infants",
+          "Toddlers",
+          "Preschoolers",
+          "School-age Children",
+          "Adolescents"
+        ]
+      ],
+      [
+        "Neuropsychology",
+        [
+          "All age categories"
+        ]
+      ],
+      [
+        "Health Psychology",
+        [
+          "Adolescents",
+          "Adults",
+          "Middle-aged Adults",
+          "Older Adults"
+        ]
+      ],
+      [
+        "Forensic Psychology",
+        [
+          "Adolescents",
+          "Adults"
+        ]
+      ],
+      [
+        "Rehabilitation Psychology",
+        [
+          "All age categories"
+        ]
+      ]
+    ]
+  }
+]
