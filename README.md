@@ -1,5 +1,7 @@
 # Medical Instruction Tuning
 
+This repositroy contains scripts and resources to create synthetical dataset for medical instruction tuning of Meditron-70B and MultiMeditron. 
+
 Content:
 * Scripts to generate prompts that health care workers might ask to Meditron.
 * Scripts to generate multiturn chats, which will be used for instruction tuning of Meditron.

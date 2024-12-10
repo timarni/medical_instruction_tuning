@@ -8,12 +8,12 @@ import math
 # prompt and context
 def get_prompt(nbr_of_questions, task, description, additional_instruction, demographics, profession="physician", specialty="no", topic="no"):
     prompt_parts = []
-    prompt_parts.append(f"Generate {nbr_of_questions} different prompts that a {profession} ")
+    prompt_parts.append(f"Generate {nbr_of_questions} different and detailed prompts that a {profession} ")
     if specialty != "no":
         prompt_parts.append(f"specializing in {specialty} ")
-    prompt_parts.append(f"might ask an AI chatbot when tasked with {task} ")
+    prompt_parts.append(f"might ask an AI chatbot when tasked with {task}")
     if topic != "no":
-        prompt_parts.append(f"in the context of the medical field \"{topic}\".\n")
+        prompt_parts.append(f" in the context of the medical field \"{topic}\".\n")
     else:
         prompt_parts.append(f".\n")
     prompt_parts.append(f"{task} is described as: {description}\n")
@@ -25,6 +25,7 @@ def get_prompt(nbr_of_questions, task, description, additional_instruction, demo
         prompt_parts.append(f"age range: {demographics[i]["age"][0]} ({demographics[i]["age"][1]} old)\n")
         prompt_parts.append(f"sex: {demographics[i]["sex"]}\n")
         prompt_parts.append(f"gender: {demographics[i]["gender"]}\n")
+    prompt_parts.append("Only mention the gender identity if it is relevant and necessary for the question you generate.\n")
     prompt_parts.append("Only include the generated prompts, adding extra details only if specified. Focus solely on the realistic prompts the health care workers working in the specified countries might ask a medical AI chatbot.\n")
     prompt_parts.append("Separate each prompt you generate in the output by ###\n")
     prompt = "".join(prompt_parts)

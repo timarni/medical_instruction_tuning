@@ -1,0 +1,71 @@
+[
+    {
+      "number": 1,
+      "title": "Content Depth",
+      "options": [
+        "Provide a detailed explanation.",
+        "Summarize in one sentence.",
+        "Give a beginner-friendly answer.",
+        "Provide an expert-level explanation.",
+        "Offer a step-by-step guide."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Formatting",
+      "options": [
+        "Answer in bullet points.",
+        "Write as a numbered list.",
+        "Provide the response as a paragraph.",
+        "Use headings and subheadings.",
+        "Format as a script or dialogue."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Tone and Style",
+      "options": [
+        "Be formal and professional.",
+        "Use a casual, conversational tone.",
+        "Be humorous and lighthearted.",
+        "Write in a motivational or inspiring tone.",
+        "Use academic language."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Language and Localization",
+      "options": [
+        "Answer in (choose a language).",
+        "Use simple language for a young audience.",
+        "Adapt the answer for a specific audience (e.g., children, teenagers, seniors)."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Presentation",
+      "options": [
+        "Highlight the risks and benefits."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Interaction Style",
+      "options": [
+        "Ask clarifying questions before answering.",
+        "Respond as succinctly as possible.",
+        "Provide a follow-up question related to the topic.",
+        "Highlight the urgent steps to take."
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Creativity",
+      "options": [
+        "Answer in the form of a poem or song lyrics.",
+        "Generate a fictional story or scenario based on the question.",
+        "Create a mnemonic or memory aid."
+      ]
+    }
+  ]
+  
