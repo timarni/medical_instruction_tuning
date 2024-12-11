@@ -24,8 +24,9 @@ def get_prompt(nbr_of_questions, task, description, additional_instruction, demo
         prompt_parts.append(f"The {enum_word} question you generate has to be about a patient seeing a {profession} in {demographics[i]["country"]}. The patient has the following demographic attributes:\n")
         prompt_parts.append(f"age range: {demographics[i]["age"][0]} ({demographics[i]["age"][1]} old)\n")
         prompt_parts.append(f"sex: {demographics[i]["sex"]}\n")
-        prompt_parts.append(f"gender: {demographics[i]["gender"]}\n")
-    prompt_parts.append("Only mention the gender identity if it is relevant and necessary for the question you generate.\n")
+        if demographics[i]["age"][0] in {"Adolescents", "Young Adults", "Adults", "Middle-aged Adults", "Older Adults", "Elderly", "Centenarians"}:
+            prompt_parts.append(f"gender identity: {demographics[i]["gender"]}\n")
+    prompt_parts.append("Mention the gender identity in the question you generate only if it is directly relevant and necessary for the medical context; it should not be mentioned otherwise.\n")
     prompt_parts.append("Only include the generated prompts, adding extra details only if specified. Focus solely on the realistic prompts the health care workers working in the specified countries might ask a medical AI chatbot.\n")
     prompt_parts.append("Separate each prompt you generate in the output by ###\n")
     prompt = "".join(prompt_parts)
