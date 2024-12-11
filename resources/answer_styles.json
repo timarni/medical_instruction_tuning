@@ -4,7 +4,7 @@
       "title": "Content Depth",
       "options": [
         "Provide a detailed explanation.",
-        "Summarize in one sentence.",
+        "Summarize your answer in one sentence.",
         "Give a beginner-friendly answer.",
         "Provide an expert-level explanation.",
         "Offer a step-by-step guide."
@@ -15,56 +15,60 @@
       "title": "Formatting",
       "options": [
         "Answer in bullet points.",
-        "Write as a numbered list.",
+        "Write the answer as a numbered list.",
         "Provide the response as a paragraph.",
-        "Use headings and subheadings.",
-        "Format as a script or dialogue."
+        "Use headings and subheadings in the answer you generate.",
+        "Format the answer as a script or dialogue."
       ]
     },
     {
       "number": 3,
       "title": "Tone and Style",
       "options": [
-        "Be formal and professional.",
-        "Use a casual, conversational tone.",
+        "Your answer has to be formal and professional.",
+        "Use a casual, conversational tone in the answer you generate.",
         "Be humorous and lighthearted.",
-        "Write in a motivational or inspiring tone.",
-        "Use academic language."
+        "Write the answer in a motivational or inspiring tone.",
+        "Use academic language in the answer you generate.",
+        "In your answer highlight the risks and benefits."
       ]
     },
     {
       "number": 4,
       "title": "Language and Localization",
       "options": [
-        "Answer in (choose a language).",
-        "Use simple language for a young audience.",
-        "Adapt the answer for a specific audience (e.g., children, teenagers, seniors)."
+        "Answer in English.",
+        "Answer in German.",
+        "Answer in French.",
+        "Answer in Italian.",
+        "Answer in Portuguese.",
+        "Answer in Hindi.",
+        "Answer in Spanish.",
+        "Answer in Thai.",
+        "In your answer, use simple language accessible to individuals with limited formal education.",
+        "Adapt the answer for children, ensuring clarity and simplicity.",
+        "Tailor the response specifically for teenagers, focusing on their interests and language style.",
+        "Provide the answer in a way that is accessible and engaging for seniors.",
+        "Craft the response to meet the needs of healthcare professionals seeking expert-level insights.",
+        "Modify the answer to appeal to college students, emphasizing relevant examples and practical applications."
       ]
     },
     {
-      "number": 7,
-      "title": "Presentation",
-      "options": [
-        "Highlight the risks and benefits."
-      ]
-    },
-    {
-      "number": 8,
+      "number": 5,
       "title": "Interaction Style",
       "options": [
         "Ask clarifying questions before answering.",
         "Respond as succinctly as possible.",
-        "Provide a follow-up question related to the topic.",
-        "Highlight the urgent steps to take."
+        "Provide a follow-up question related to the topic."
       ]
     },
     {
-      "number": 10,
+      "number": 6,
       "title": "Creativity",
       "options": [
         "Answer in the form of a poem or song lyrics.",
         "Generate a fictional story or scenario based on the question.",
-        "Create a mnemonic or memory aid."
+        "Create a mnemonic or memory aid in the answer you provide."
       ]
     }
   ]
