@@ -226,3 +226,94 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
         return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
                             cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
                             u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
+    
+
+def get_multiturn_style_additional(id, context): # id is "A-0-2E-Cameroon"
+                                                        # which is Version-number-answerstyle-countrs
+    id_parts = id.split('-', 3)  # Split into three parts: letter, number, and the rest (country)
+
+    version = id_parts[0]
+    number = int(id_parts[1])
+    answer_style = id_parts[2]
+    country = id_parts[3]
+
+    ai_task_nbr = int(context[0]) - 1
+
+    # Usage mode: chat, normal, emergency (depening on id -> since )
+    mode_choices = ["chat", "normal", "emergency"]
+    match ai_task_nbr:
+        case n if n in [1, 4, 5, 8, 9, 10, 12]: # Non Emergency cases
+            mode = get_sample(choices=mode_choices, weights=[0.4, 0.6, 0])
+        case 6: # Non Emergency and non chat option
+              mode = "normal"
+        case n if n in [0, 2, 3, 7]: # All cases possible
+            mode = get_sample(choices=mode_choices, weights=[0.4, 0.5, 0.1])
+        case 11: # Very good for emergency
+            mode = get_sample(choices=mode_choices, weights=[0.3, 0.3, 0.4])
+        case _:
+            raise ValueError(f"Invalid id: '{id}'")     
+    
+    # Number of turn
+    nbr_of_turns_choices = [1, 2, 3]
+    match mode:
+        case s if s in ["chat", "emergency"]:
+            nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.2, 0.3, 0.5])
+        case "normal":
+            nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.5, 0.3, 0.2])
+
+    # Length of chatbots answer -> possibilities: short, long, exactly_2_sentences, exactly_4_sentences
+    chatbot_length_choices = ["no_specification", "short", "long", "exactly_n_sentences"]
+    cb_length = get_sample(choices=chatbot_length_choices, weights=[0.6, 0.15, 0.2, 0.05])
+
+    # Style of chatbot's answer -> possibilities: chat, flat text, bullets, step by step
+    chatbot_style_choices = ["no_specification", "markdown", "plain text", "bullets", "step by step"]
+    cb_style = get_sample(choices=chatbot_style_choices, weights=[0.6, 0.1, 0.1, 0.1, 0.1])
+
+    # If chatbot uses a lot of scientific term -> possibilities: popularization, standard, scientific
+    chatbot_scientific_choices = ["popularization", "standard", "scientific"]
+    cb_scientific = get_sample(choices=chatbot_scientific_choices, weights=[0.1, 0.8, 0.1])
+
+    # Length of user questions -> possibilities: chat, short, long, exactly_1_sentence, exactly_3_sentences
+    user_length_choices = ["no_specification", "short", "long", "exactly_n_sentences"]
+    u_length = get_sample(choices=user_length_choices, weights=[0.4, 0.3, 0.2, 0.1])
+
+    # If the user uses a lot of scientific term -> possibilities: popularization, standard, scientific
+    user_scientific_choices = ["popularization", "standard", "scientific"]
+    u_scientific = get_sample(choices=user_scientific_choices, weights=[0.1, 0.8, 0.1])
+
+    if profession == "no": # task_x_subtopics case
+        return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
+                            cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
+                            u_length=u_length, u_scientific=u_scientific)
+    else:
+        return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
+                            cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
+                            u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
+
+def find_profession_by_specialty(file_path, specialty):
+    """
+    Takes a JSON file path and a specialty string, and returns the associated profession.
+
+    Parameters:
+        file_path (str): Path to the JSON file.
+        specialty (str): The specialty to search for.
+
+    Returns:
+        str: The profession associated with the specialty, or None if not found.
+    """
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+
+        for entry in data:
+            if specialty in entry.get("specialties", []):
+                return entry.get("profession")
+
+        return None  # Specialty not found in any profession
+
+    except FileNotFoundError:
+        print(f"Error: File at {file_path} not found.")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: Failed to decode JSON from file at {file_path}.")
+        return None

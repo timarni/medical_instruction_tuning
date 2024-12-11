@@ -1,6 +1,6 @@
 # Medical Instruction Tuning
 
-This repositroy contains scripts and resources to create synthetical dataset for medical instruction tuning of Meditron-70B and MultiMeditron. 
+This repositroy contains scripts and resources to create synthetical datasets for medical instruction tuning of Meditron-70B and MultiMeditron. Instruction tuning is a technique for fine-tuning large language models (LLMs) on a labeled dataset of instructional prompts and corresponding outputs. It improves model performance not only on specific tasks, but on following instructions in general, thus helping adapt pre-trained models for practical use. [Source: IBM instruction tuning](https://www.ibm.com/topics/instruction-tuning)
 
 Content:
 * Scripts to generate prompts that health care workers might ask to Meditron.
@@ -24,7 +24,6 @@ results:
 
 resources:
 * Contains useful lists of medical professions, medical topics and tasks a chatbot can be useful for in the medical domain: `medical_professions.json`, `medical_topics.json`, `medical_subtopics.json`, `medical_ai_tasks.json` and `medical_settings.json`
-* [IBM instruction tuning](https://www.ibm.com/topics/instruction-tuning)
 
 
-code written by Tim Arni in the context of a semester research project during a Master's in Data Science at EPFL
+Code written by Tim Arni in the context of a semester research project during a Master's in Data Science at EPFL. Supervised by Etienne Boisson, Bastien and Alexandre Sallinen (EPFL).
