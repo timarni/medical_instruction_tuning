@@ -10,10 +10,10 @@ from typing import List, Union, Optional
 class MultiturnStyle:
     """
     A class that defines the style and parameters for generating multiturn interactions 
-    between a medical AI chatbot and a healthcare user.
+    between a medical AI chatbot and a healthcare worker (user).
 
     Attributes:
-        id (str): Unique identifier for the interaction (e.g., "task_id-specialty_id").
+        id (str): Unique identifier for the interaction (e.g., "task_id-specialty_id"). Corresponds to the id of the already generated initial prompt of the user.
         country (str): Country in which the user operates.
         setting (str): Resource setting (default: "high"). Possible values: 'high', 'low', 'war'.
         number_of_turns (int): Number of question-answer exchanges.
@@ -70,7 +70,7 @@ class MultiturnStyle:
         Returns:
             str: The formatted system prompt string for the chatbot.
         Raises:
-            ValueError: If invalid options are provided for chatbot length, style, or scientific level.
+            ValueError: If invalid options are provided for chatbot length, style, scientific level or mode.
         """
 
         prompt_parts = [self.base_system_prompt_chatbot]
@@ -117,7 +117,7 @@ class MultiturnStyle:
                     case _:
                         raise ValueError(f"Invalid chatbot_style: '{self.chatbot_style}'")
             case _:
-                raise ValueError(f"Invalid chatbot_style: '{self.mode}'")
+                raise ValueError(f"Invalid mode: '{self.mode}'")
 
 
             
@@ -139,12 +139,12 @@ class MultiturnStyle:
     
     def system_prompt_user(self) -> str:
         """
-        Generates the system prompt for the healthcare worker user based on the current style attributes.
+        Generates the system prompt for the healthcare worker (user) based on the current style attributes.
 
         Returns:
             str: The formatted system prompt string for the user.
         Raises:
-            ValueError: If invalid options are provided for user length or scientific level.
+            ValueError: If invalid options are provided for user length, user scientific level or mode.
         """
 
         prompt_parts = [self.base_system_prompt_user]
@@ -172,6 +172,9 @@ class MultiturnStyle:
                             prompt_parts.append(f"- All your questions should be exactly {n} sentences long. \n")
                     case _:
                         raise ValueError(f"Invalid user_length: '{self.user_length}'")
+            case _:
+                raise ValueError(f"Invalid mode: '{self.mode}'")
+
                 
         # Add if the style of the answers should be very scientific
         match self.user_scientific:
@@ -201,7 +204,7 @@ def get_sample(choices: List, weights: List[float]) -> Union[int, str]:
         weights (list): A list of weights corresponding to the choices.
 
     Returns:
-        str: The selected choice.
+        str or int: The selected choice.
 
     Raises:
         ValueError: If choices or weights are empty or if their lengths differ.
@@ -229,11 +232,11 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
     Creates a `MultiturnStyle` object with parameters sampled based on predefined distributions.
 
     Args:
-        id (str): Unique identifier for the multiturn interaction.
+        id (str): Unique identifier for the multiturn interaction. Corresponds to the id of the initial prompt.
         sampled_country (str): The country of operation for the user.
         profession (str): The user's profession (default: "no").
         specialty (str): The user's medical specialty (default: "no").
-        domain (str): The domain of the task (default: "no").
+        domain (str): The domain (= topic) of the task (default: "no").
 
     Returns:
         MultiturnStyle: A configured `MultiturnStyle` object.
@@ -302,9 +305,9 @@ def get_multiturn_style_additional(id, context) -> MultiturnStyle:    # id is "A
 
     Args:
         id (str): A string identifier for the interaction, typically formatted as "A-0-2E-Cameroon".
-                  - The first part represents a version or task type.
-                  - The second part represents a numeric identifier.
-                  - The third part represents an answer style or mode.
+                  - The first part represents a the version (A to D)
+                  - The second part represents a numeric identifier. (0 to 2586)
+                  - The third part represents an answer style or mode. (1A to 6C)
                   - The fourth part specifies the country.
         context (list): A list containing additional context information about the interaction:
                         - context[0]: AI Task number (int, 1-based indexing).
