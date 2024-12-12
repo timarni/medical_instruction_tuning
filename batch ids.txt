@@ -1,3 +1,0 @@
-Batch: specialty_x_domain 1c:batch_673c7b441ea881909e45c2707f91d905
-Batch: tasks_x_subtopics 1c:batch_673c7d2cfacc8190b8e6170babe91ceb
-

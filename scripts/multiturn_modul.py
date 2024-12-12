@@ -1,11 +1,34 @@
 import random
 import json
+from typing import List, Union, Optional
 
 
-# Multiturn Class that represents one interaction mode
-# Methodes to get system prompt for Meditron and User, both simulated by gpt-4o
+# This script implements the MultitrunStyle class
+# The MultiturnStyle class defines the system prompts for the chatbot and the user
+# Those system prompts are given to gpt-4o to syntheticaly generate a multiturn chat between a medical AI chatbot and a health care worker (user)
 
 class MultiturnStyle:
+    """
+    A class that defines the style and parameters for generating multiturn interactions 
+    between a medical AI chatbot and a healthcare user.
+
+    Attributes:
+        id (str): Unique identifier for the interaction (e.g., "task_id-specialty_id").
+        country (str): Country in which the user operates.
+        setting (str): Resource setting (default: "high"). Possible values: 'high', 'low', 'war'.
+        number_of_turns (int): Number of question-answer exchanges.
+        mode (str): Interaction mode. Possible values: "chat", "normal", "emergency".
+        chatbot_length (str): Length of the chatbot's responses.
+        chatbot_style (str): Style of the chatbot's answers.
+        chatbot_scientific (str): Scientific complexity of chatbot's language.
+        user_length (str): Length of the user's questions.
+        user_scientific (str): Scientific complexity of user's language.
+        user_specialty (str): User's medical specialty.
+        bad_grammar (bool): Indicates whether the user has poor grammar.
+        base_system_prompt_chatbot (str): Base system prompt for the chatbot.
+        base_system_prompt_user (str): Base system prompt for the user.
+        number_of_turns_done (int): Tracks the number of completed turns.
+    """
     def __init__(self, id, country, setting = "high", nbr_of_turns = 1, mode = "normal",
                  cb_style = "flat text", cb_length = "short", cb_scientific = "standard",
                  u_length = "short",  u_scientific = "standard", u_specialty = "physician", u_bad_grammar = False):
@@ -41,6 +64,15 @@ class MultiturnStyle:
 
     # adds sytle specification to the system prompt of meditron
     def system_prompt_chatbot(self) -> str:
+        """
+        Generates the system prompt for the medical AI chatbot based on the current style attributes.
+
+        Returns:
+            str: The formatted system prompt string for the chatbot.
+        Raises:
+            ValueError: If invalid options are provided for chatbot length, style, or scientific level.
+        """
+
         prompt_parts = [self.base_system_prompt_chatbot]
         general_guidelines = '''- Respectful, polite interaction: You must always engage in a respectful, polite, and courteous manner, maintaining professionalism in all interactions.
 - Honest, evidence-based information: All responses have to be based on the latest medical evidence and guidelines
@@ -106,6 +138,15 @@ class MultiturnStyle:
         return ''.join(prompt_parts)
     
     def system_prompt_user(self) -> str:
+        """
+        Generates the system prompt for the healthcare worker user based on the current style attributes.
+
+        Returns:
+            str: The formatted system prompt string for the user.
+        Raises:
+            ValueError: If invalid options are provided for user length or scientific level.
+        """
+
         prompt_parts = [self.base_system_prompt_user]
 
         # User behavior is characterized by 3 different modes: chat, normal or emergency mode
@@ -151,7 +192,20 @@ class MultiturnStyle:
 
 
 # Helper function get sample with specified disctirbution (weights)
-def get_sample(choices, weights):
+def get_sample(choices: List, weights: List[float]) -> Union[int, str]:
+    """
+    Samples one item from a list of choices using specified weights.
+
+    Args:
+        choices (list): A list of choices to sample from.
+        weights (list): A list of weights corresponding to the choices.
+
+    Returns:
+        str: The selected choice.
+
+    Raises:
+        ValueError: If choices or weights are empty or if their lengths differ.
+    """
     if not choices or not weights:
         raise ValueError("choices and weights cannot be empty.")
     
@@ -169,8 +223,21 @@ def get_sample(choices, weights):
 # 8 - "Health Risk Assessment", 9 - "Nutrition and Diet Planning", 10 - "Language Translation", 11 - "Emergency Triage"
 # 12 - "Health Policy Guidance", 20 - Specialty times domain prompts
 
-def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no", domain = "no"): # id is task_id - specialty_id
+def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no", domain = "no"
+    )-> MultiturnStyle: # id is task_id - specialty_id
+    """
+    Creates a `MultiturnStyle` object with parameters sampled based on predefined distributions.
 
+    Args:
+        id (str): Unique identifier for the multiturn interaction.
+        sampled_country (str): The country of operation for the user.
+        profession (str): The user's profession (default: "no").
+        specialty (str): The user's medical specialty (default: "no").
+        domain (str): The domain of the task (default: "no").
+
+    Returns:
+        MultiturnStyle: A configured `MultiturnStyle` object.
+    """
     # Usage mode: chat, normal, emergency (depening on id -> since )
     mode_choices = ["chat", "normal", "emergency"]
     match int(id.split("-")[0]):
@@ -228,8 +295,30 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
                             u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
     
 
-def get_multiturn_style_additional(id, context):    # id is "A-0-2E-Cameroon"
-                                                    # which is Version-number-answerstyle-country
+def get_multiturn_style_additional(id, context) -> MultiturnStyle:    # id is "A-0-2E-Cameroon"
+                                                                        # which is Version-number-answerstyle-country
+    """
+    Creates a `MultiturnStyle` object based on the provided ID and context.
+
+    Args:
+        id (str): A string identifier for the interaction, typically formatted as "A-0-2E-Cameroon".
+                  - The first part represents a version or task type.
+                  - The second part represents a numeric identifier.
+                  - The third part represents an answer style or mode.
+                  - The fourth part specifies the country.
+        context (list): A list containing additional context information about the interaction:
+                        - context[0]: AI Task number (int, 1-based indexing).
+                        - context[1]: AI Task name (str, e.g., "Predictive Analytics").
+                        - context[2]: Context number (int).
+                        - context[3]: Specialty or profession or topic (str).
+
+    Returns:
+        MultiturnStyle: A configured `MultiturnStyle` object based on the provided ID and context.
+
+    Raises:
+        ValueError: If the context number is out of bounds or if invalid values are provided 
+                    in the `id` or `context` fields.
+    """
 
     # Extract information from the id
     # version = id_parts[0]
@@ -319,17 +408,21 @@ def get_multiturn_style_additional(id, context):    # id is "A-0-2E-Cameroon"
                             cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
                             u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
 
-def find_profession_by_specialty(file_path, specialty):
+def find_profession_by_specialty(file_path: str, specialty: str) -> Optional[str]:
     """
-    Takes a JSON file path and a specialty string, and returns the associated profession.
+    Maps a medical specialty to a profession by reading a JSON file.
 
-    Parameters:
-        file_path (str): Path to the JSON file.
-        specialty (str): The specialty to search for.
+    Args:
+        file_path (str): Path to the JSON file containing the mapping.
+        specialty (str): The specialty to look up.
 
     Returns:
-        str: The profession associated with the specialty, or None if not found.
-    """
+        Optional[str]: The associated profession, or None if the specialty is not found.
+
+    Raises:
+        FileNotFoundError: If the specified JSON file is not found.
+        JSONDecodeError: If the JSON file is improperly formatted.
+    """ 
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)
