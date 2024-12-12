@@ -1,4 +1,5 @@
 import random
+import json
 
 
 # Multiturn Class that represents one interaction mode
@@ -45,7 +46,8 @@ class MultiturnStyle:
 - Honest, evidence-based information: All responses have to be based on the latest medical evidence and guidelines
 - Ethical and safe content: Under no circumstances should you provide fake, harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. If a question is unclear or factually incorrect, you should explain why rather than attempting to answer it inaccurately.
 - Dosage: If asked about dosage medication, provide a ballpark estimate of the dosage but always provide a concise warning that this should be checked in the form of “(dosages should be verified)”.
-- Tailor responses to the geographical context, resource setting, level of care, seasonality/epidemiology, and medical specialty as relevant.'''
+- Adhere meticulously to any specific formatting instructions provided by the user in the prompt, ensuring the generated output aligns precisely with their requirements.
+- Tailor responses to the geographical context, resource setting, level of care, seasonality/epidemiology, and medical specialty as relevant.\n'''
         prompt_parts.append(general_guidelines)
         # Chatbot can be used in chat, normal or emergency mode
         match self.mode:
@@ -98,9 +100,8 @@ class MultiturnStyle:
             case _:
                 raise ValueError(f"Invalid chatbot_scientific: '{self.chatbot_scientific}'")
         
-        if self.mode in ["chat", "emergency"]:
-            prompt_parts.append("In the prompt you see the whole chat history. You are (chatbot). Your task is to answer the questions and only ask follow up questions, if the user did not provide enough information in its input. \n")
-            prompt_parts.append("Your (chatbot) tag is added manually, don't write it in your output. Just generate an answer to the users input")
+        prompt_parts.append("In the prompt you see the whole chat history. You are (chatbot). Your task is to answer the questions and only ask follow up questions, if the user did not provide enough information in its input. \n")
+        prompt_parts.append("Your (chatbot) tag is added manually, don't write it in your output. Just generate an answer to the users input")
         
         return ''.join(prompt_parts)
     
@@ -142,9 +143,8 @@ class MultiturnStyle:
             case _:
                 raise ValueError(f"Invalid user_scientific: '{self.user_scientific}'")
 
-        if self.mode in ["chat", "emergency"]:
-            prompt_parts.append("In the prompt you see the whole chat history. You are (user). You want to get an answer to the first question you asked. Your task is to ask followup questions and to interact with the chatbot to get a clear answer to your initial, as a health care worker would do. \n")
-            prompt_parts.append("Your (user) tag is added manually, don't write it in your output. Just generate a question or an instruction for the chatbot, based on the conversation history")
+        prompt_parts.append("In the prompt you see the whole chat history. You are (user). You want to get an answer to the first question you asked. Your task is to ask followup questions and to interact with the chatbot to get a clear answer to your initial, as a health care worker would do. \n")
+        prompt_parts.append("Your (user) tag is added manually, don't write it in your output. Just generate a question or an instruction for the chatbot, based on the conversation history")
 
         return ''.join(prompt_parts)
     
@@ -228,28 +228,46 @@ def get_multiturn_style(id, sampled_country, profession = "no", specialty = "no"
                             u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
     
 
-def get_multiturn_style_additional(id, context): # id is "A-0-2E-Cameroon"
-                                                        # which is Version-number-answerstyle-countrs
-    id_parts = id.split('-', 3)  # Split into three parts: letter, number, and the rest (country)
+def get_multiturn_style_additional(id, context):    # id is "A-0-2E-Cameroon"
+                                                    # which is Version-number-answerstyle-country
 
-    version = id_parts[0]
+    # Extract information from the id
+    # version = id_parts[0]
+    id_parts = id.split('-', 3)  # Split into three parts: letter, number, and the rest (country)
     number = int(id_parts[1])
     answer_style = id_parts[2]
     country = id_parts[3]
 
+    # Extract information from context
     ai_task_nbr = int(context[0]) - 1
+    ai_task_name = context[1]
+
+    context_nbr = int(context[2])
+    if context_nbr >= 1 and context_nbr <= 129:
+        specialty = context[3]
+        profession = find_profession_by_specialty(file_path="../resources/medical_professions.json", specialty=specialty)
+    elif context_nbr >= 130 and context_nbr <= 150:
+        specialty = "no"
+        profession = context[3]
+    elif context_nbr >= 151 and context_nbr <= 199:
+        specialty = "no"
+        profession = "no"
+    else:
+        raise ValueError(f"{context_nbr} is out of bounds")
 
     # Usage mode: chat, normal, emergency (depening on id -> since )
+    if answer_style == "EM": # because they work very well for emergency mode
+        ai_task_nbr = 11
     mode_choices = ["chat", "normal", "emergency"]
     match ai_task_nbr:
         case n if n in [1, 4, 5, 8, 9, 10, 12]: # Non Emergency cases
-            mode = get_sample(choices=mode_choices, weights=[0.4, 0.6, 0])
+            mode = get_sample(choices=mode_choices, weights=[0.25, 0.75, 0])
         case 6: # Non Emergency and non chat option
               mode = "normal"
         case n if n in [0, 2, 3, 7]: # All cases possible
-            mode = get_sample(choices=mode_choices, weights=[0.4, 0.5, 0.1])
+            mode = get_sample(choices=mode_choices, weights=[0.25, 0.7, 0.05])
         case 11: # Very good for emergency
-            mode = get_sample(choices=mode_choices, weights=[0.3, 0.3, 0.4])
+            mode = get_sample(choices=mode_choices, weights=[0.2, 0.4, 0.4])
         case _:
             raise ValueError(f"Invalid id: '{id}'")     
     
@@ -260,6 +278,13 @@ def get_multiturn_style_additional(id, context): # id is "A-0-2E-Cameroon"
             nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.2, 0.3, 0.5])
         case "normal":
             nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.5, 0.3, 0.2])
+    # Override number of turns for some special cases:
+    if ai_task_name == "Language Translation": # Heurisitc: Multiturn for translation did not seem to give meaningful results
+        nbr_of_turns = get_sample(choices=nbr_of_turns_choices, weights=[0.8, 0.1, 0.1])
+    if answer_style[0] == "5": # Doctor asks chatbot to interact
+        nbr_of_turns = 3
+    if answer_style[0] == "6": # Difficult to have multiturn for creativtiy
+        nbr_of_turns = 1
 
     # Length of chatbots answer -> possibilities: short, long, exactly_2_sentences, exactly_4_sentences
     chatbot_length_choices = ["no_specification", "short", "long", "exactly_n_sentences"]
@@ -281,12 +306,16 @@ def get_multiturn_style_additional(id, context): # id is "A-0-2E-Cameroon"
     user_scientific_choices = ["popularization", "standard", "scientific"]
     u_scientific = get_sample(choices=user_scientific_choices, weights=[0.1, 0.8, 0.1])
 
-    if profession == "no": # task_x_subtopics case
-        return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
+    if profession == "no":
+        return MultiturnStyle(id=id, country=country, nbr_of_turns=nbr_of_turns, mode=mode,
                             cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
                             u_length=u_length, u_scientific=u_scientific)
+    elif specialty == "no":
+        return MultiturnStyle(id=id, country=country, nbr_of_turns=nbr_of_turns, mode=mode,
+                            cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
+                            u_length=u_length, u_scientific=u_scientific, u_specialty= profession)
     else:
-        return MultiturnStyle(id=id, country=sampled_country, nbr_of_turns=nbr_of_turns, mode=mode,
+        return MultiturnStyle(id=id, country=country, nbr_of_turns=nbr_of_turns, mode=mode,
                             cb_length=cb_length, cb_style=cb_style, cb_scientific=cb_scientific,
                             u_length=u_length, u_scientific=u_scientific, u_specialty= profession + " specialized in " + specialty)
 
